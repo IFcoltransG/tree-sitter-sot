@@ -1,0 +1,4 @@
+def assigning(a: u8) -> u8 {
+  let b: u8 = a;
+  b = b + 1
+}

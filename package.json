@@ -1,0 +1,25 @@
+{
+  "name": "tree-sitter-sot",
+  "version": "0.1.0",
+  "description": "A test treesitter program",
+  "main": "bindings/node",
+  "scripts": {
+    "test": "tree-sitter test"
+  },
+  "author": "IFcoltransG",
+  "license": "MIT",
+  "dependencies": {
+    "nan": "^2.16.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.6"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.sot",
+      "file-types": [
+        "sot"
+      ]
+    }
+  ]
+}

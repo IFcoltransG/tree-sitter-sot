@@ -1,0 +1,176 @@
+======
+A function
+======
+
+def meaning_of_life() -> u8 {
+    42
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (primitive_type)
+    (code_block
+      (number))))
+
+=====
+Simple addition
+=====
+def three() -> u8 {
+  1 + 2
+}
+---
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (primitive_type)
+    (code_block
+      (add
+        (number)
+        (number)))))
+
+=====
+Order of operations
+=====
+
+def number() -> u8 {
+  1 + 2 * 3 + 1
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (primitive_type)
+    (code_block
+      (add
+        (add
+          (number)
+          (multiply
+            (number)
+            (number)))
+        (number)))))
+
+====
+Minimal
+====
+
+def _() {
+  1
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (code_block
+      (number))))
+
+====
+Parameters
+====
+
+def a_function(a: u8, b: u8,) -> u8 {
+  a + 1
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list
+      (binding_definition
+        (identifier)
+        (primitive_type))
+      (binding_definition
+        (identifier)
+        (primitive_type)))
+    (primitive_type)
+    (code_block
+      (add
+        (identifier)
+        (number)))))
+
+====
+Multiple expressions
+====
+
+def expressions() {
+  1 + 1;
+  2 / 2
+}
+
+---
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (code_block
+      (add
+        (number)
+        (number))
+      (divide
+        (number)
+        (number)))))
+
+====
+Trailing semicolon
+====
+
+def trailing(a: u8) {
+  a + a;
+}
+
+---
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list
+      (binding_definition
+        (identifier)
+        (primitive_type)))
+    (code_block
+      (add
+        (identifier)
+        (identifier))
+      (trailing_semicolon))))
+
+====
+Assignment
+====
+
+def assigning(a: u8) -> u8 {
+  let b: u8 = a;
+  b = b + 1
+}
+
+---
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list
+      (binding_definition
+        (identifier)
+        (primitive_type)))
+    (primitive_type)
+    (code_block
+      (assignment
+        (binding_definition
+          (identifier)
+          (primitive_type))
+        (identifier))
+      (assignment
+        (identifier)
+        (add
+          (identifier)
+          (number))))))
