@@ -1,3 +1,5 @@
+# [MIGRATED TO CODEBERG](https://codeberg.org/IFcoltransG/tree-sitter-sot)
+
 # tree-sitter-sot
 I'm just playing around with Tree Sitter, this isn't a grammar for an actual language.
 
